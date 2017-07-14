@@ -60,6 +60,12 @@ done
 # enable OpenVPN
 /opt/vpncmd localhost /SERVER /CSV /CMD OpenVpnEnable yes /PORTS:1194
 
+# enable KeepAlive
+/opt/vpncmd localhost /SERVER /CSV /CMD KeepEnable
+
+# enable VPN over DNS
+/opt/vpncmd localhost /SERVER /CSV /CMD VpnOverIcmpDnsEnable /ICMP:yes DNS:yes
+
 # set server certificate & key
 if [[ -f server.crt && -f server.key ]]; then
   /opt/vpncmd localhost /SERVER /CSV /CMD ServerCertSet /LOADCERT:server.crt /LOADKEY:server.key
