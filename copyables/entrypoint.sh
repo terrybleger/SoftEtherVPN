@@ -64,7 +64,7 @@ done
 /opt/vpncmd localhost /SERVER /CSV /CMD KeepEnable
 
 # enable VPN over DNS
-/opt/vpncmd localhost /SERVER /CSV /CMD VpnOverIcmpDnsEnable /ICMP:yes DNS:yes
+/opt/vpncmd localhost /SERVER /CSV /CMD VpnOverIcmpDnsEnable /ICMP:yes /DNS:yes
 
 # set server certificate & key
 if [[ -f server.crt && -f server.key ]]; then
