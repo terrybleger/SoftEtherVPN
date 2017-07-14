@@ -131,10 +131,14 @@ export PASSWORD='**'
 # set password for hub
 : ${HPW:=$(cat /dev/urandom | tr -dc 'A-Za-z0-9' | fold -w 16 | head -n 1)}
 /opt/vpncmd localhost /SERVER /HUB:DEFAULT /CSV /CMD SetHubPassword ${HPW}
+echo "HPW: ${HPW}"
+echo
 
 # set password for server
 : ${SPW:=$(cat /dev/urandom | tr -dc 'A-Za-z0-9' | fold -w 20 | head -n 1)}
 /opt/vpncmd localhost /SERVER /CSV /CMD ServerPasswordSet ${SPW}
+echo "SPW: ${SPW}"
+echo
 
 /opt/vpnserver stop 2>&1 > /dev/null
 
