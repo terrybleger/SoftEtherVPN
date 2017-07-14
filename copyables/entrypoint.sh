@@ -52,7 +52,7 @@ done
 /opt/vpncmd localhost /SERVER /CSV /CMD About | head -2 | tail -1 | sed 's/^/# /;'
 
 # enable L2TP_IPsec
-/opt/vpncmd localhost /SERVER /CSV /CMD IPsecEnable /L2TP:yes /L2TPRAW:yes /ETHERIP:no /PSK:${PSK} /DEFAULTHUB:DEFAULT
+/opt/vpncmd localhost /SERVER /CSV /CMD IPsecEnable /L2TP:yes /L2TPRAW:yes /ETHERIP:yes /PSK:${PSK} /DEFAULTHUB:DEFAULT
 
 # enable SecureNAT
 /opt/vpncmd localhost /SERVER /CSV /HUB:DEFAULT /CMD SecureNatEnable
